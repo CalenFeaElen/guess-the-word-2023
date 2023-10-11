@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title>Guess the Word</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <!-- Add your site or application content here -->
+    <header>
+      <div>
+        <div class="cats top">
+          <img src="img/3.png" alt="Whimsical black cat with yellow eyes" />
+          <div id="banner">
+            <img
+              src="img/GTWbanner.png"
+              alt="Guess the Word on an orange gradient background"
+            />
+          </div>
+          <img src="img/5.png" alt="Whimsical black cat with yellow eyes" />
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="talking-cat">
+        <img src="img/9.png" alt="Black cat dancing" />
+      </div>
+      <div class="player">
+        <div class="player-msg">
+          <h3></h3>
+        </div>
+        <div class="word-cont">
+          <p class="word">* * * *</p>
+        </div>
+        <div class="guesses">
+          <p id="remaining">
+            You have <span class="remaining">8</span> guesses remaining
+          </p>
+          <p id="guessed">A E I O U</p>
+        </div>
+        <div class="player-input">
+          <form action="">
+            <label for="guess" id="info">Type one letter:</label>
+            <input type="text" id="guess" name="guess" />
+            <input type="submit" id="button" value="Guess!" class="button" />
+          </form>
+        </div>
+        <div class="play-again">
+          <button id="play-again">Play Again</button>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="cats bottom">
+        <img src="img/4.png" alt="Whimsical black cat with yellow eyes" />
+        <img src="img/6.png" alt="Whimsical black cat with yellow eyes" />
+      </div>
+    </footer>
+    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+      window.ga = function () {
+        ga.q.push(arguments);
+      };
+      ga.q = [];
+      ga.l = +new Date();
+      ga("create", "UA-XXXXX-Y", "auto");
+      ga("set", "anonymizeIp", true);
+      ga("set", "transport", "beacon");
+      ga("send", "pageview");
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
+  </body>
+</html>
