@@ -137,6 +137,7 @@ main {
 
 .player-msg {
   font-size: 1.5em;
+  font-weight: bold;
 }
 
 .word-cont {
@@ -148,9 +149,15 @@ main {
   font-weight: bold;
 }
 
-#guessed,
+.guessed,
 #remaining {
   text-align: center;
+}
+
+.guessed {
+  list-style: none;
+  display: flex;
+  flex-flow: row;
 }
 
 .player-input form {
