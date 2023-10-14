@@ -16,6 +16,11 @@ let message = document.querySelector(".player-msg");
 let playAgainButton = document.querySelector(".play-again");
 // Section where the player enters their input
 let playerInput = document.querySelector(".player-input");
+//Cat sound effects
+
+function playAudio(url) {
+  new Audio(url).play();
+}
 
 let word = "";
 let guessedLetters = [];
@@ -47,12 +52,14 @@ placeholder(word);
 
 button.addEventListener("click", function (e) {
   e.preventDefault();
+  playAudio("audio/Cute-cat-meow-sound.mp3");
   message.innerText = "";
   const guessed = guess.value;
   const goodGuess = checkInput(guessed);
   if (goodGuess) {
     makeGuess(guessed);
   }
+
   guess.value = "";
 });
 
@@ -109,8 +116,10 @@ const guessesRemaining = function (guess) {
   if (!upperWord.includes(guess)) {
     message.innerText = `Sorry. There is no ${guess}. Guess again.`;
     remainingGuesses -= 1;
+    playAudio("audio/Angry-cat-sound-effect.mp3");
   } else {
     message.innerText = `Good guess! The word has the letter ${guess}.`;
+    playAudio("audio/purr.mp3");
   }
 
   if (remainingGuesses === 0) {

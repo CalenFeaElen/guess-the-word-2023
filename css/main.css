@@ -102,6 +102,12 @@ body {
   display: flex;
   flex-flow: row;
   justify-content: space-between;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.cats.bottom {
+  margin-top: -25px;
 }
 
 /* Header */
@@ -200,13 +206,16 @@ form {
 }
 
 #button {
-  margin-top: 15px;
+  margin-top: 25px;
   background-color: #4de1fa;
   border-radius: 10px;
   font-size: 1.5em;
-  max-width: 100px;
+  max-width: 150px;
+  padding: 10px 15px;
   margin-left: auto;
   margin-right: auto;
+  cursor: url("../img/pawCursor.png"), pointer;
+  font-weight: bold;
 }
 
 .play-again-cont {
@@ -221,6 +230,7 @@ form {
   max-width: 150px;
   margin-left: auto;
   margin-right: auto;
+  cursor: url("../img/pawCursor.png"), pointer;
 }
 
 /* Footer */
@@ -253,6 +263,7 @@ footer {
     background-position: 0% 50%;
   }
 }
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
