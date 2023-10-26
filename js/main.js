@@ -17,6 +17,9 @@ let playAgainButton = document.querySelector(".play-again");
 // Section where the player enters their input
 let playerInput = document.querySelector(".player-input");
 //Cat sound effects
+let audioSwitch = document.querySelector(".checkbox");
+//Button to turn cat sound effects off and on
+let sound = false;
 
 function playAudio(url) {
   new Audio(url).play();
@@ -52,7 +55,9 @@ placeholder(word);
 
 button.addEventListener("click", function (e) {
   e.preventDefault();
-  playAudio("audio/Cute-cat-meow-sound.mp3");
+  if (sound === true) {
+    playAudio("audio/Cute-cat-meow-sound.mp3");
+  }
   message.innerText = "";
   const guessed = guess.value;
   const goodGuess = checkInput(guessed);
@@ -95,6 +100,15 @@ const showGuesses = function () {
   }
 };
 
+audioSwitch.addEventListener("change", () => {
+  if (audioSwitch.checked) {
+    sound = true;
+    console.log(sound);
+  } else {
+    sound = false;
+  }
+});
+
 const updateWord = function (guessedLetters) {
   const wordUpper = word.toUpperCase();
   const wordUpperArray = wordUpper.split("");
@@ -116,10 +130,14 @@ const guessesRemaining = function (guess) {
   if (!upperWord.includes(guess)) {
     message.innerText = `Sorry. There is no ${guess}. Guess again.`;
     remainingGuesses -= 1;
-    playAudio("audio/Angry-cat-sound-effect.mp3");
+    if (sound === true) {
+      playAudio("audio/Angry-cat-sound-effect.mp3");
+    }
   } else {
     message.innerText = `Good guess! The word has the letter ${guess}.`;
-    playAudio("audio/purr.mp3");
+    if (sound === true) {
+      playAudio("audio/purr.mp3");
+    }
   }
 
   if (remainingGuesses === 0) {
