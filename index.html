@@ -48,6 +48,9 @@
             src="img/GTW-bannercat.png"
             alt="Guess the Word on an orange gradient background"
           />
+          <div class="popup">
+            <span class="popuptext" id="myPopup">Click on me!</span>
+          </div>
         </div>
       </div>
     </header>
@@ -66,7 +69,7 @@
           <ul class="guessed"></ul>
         </div>
         <div class="player-input">
-          <form action="">
+          <form id="form" action="">
             <label for="guess" id="info">Type one letter:</label>
             <input type="text" id="guess" name="guess" />
             <input type="submit" id="button" value="Guess!" class="button" />
@@ -77,7 +80,7 @@
         </div>
         <div class="sound-controls">
           <label class="switch">
-            <input class="checkbox" type="checkbox" />
+            <input id="cb" class="checkbox" type="checkbox" />
             <span
               class="switch-label"
               data-on="Sound On"
