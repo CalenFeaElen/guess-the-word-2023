@@ -150,7 +150,8 @@ p.player-msg {
 }
 
 p.word {
-  font-size: 1.7em;
+  font-size: 1.5em;
+  margin-top: 0;
 }
 
 p#remaining {
