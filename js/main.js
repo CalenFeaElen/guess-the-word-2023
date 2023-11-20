@@ -20,6 +20,7 @@ let playerInput = document.querySelector(".player-input");
 let audioSwitch = document.querySelector(".checkbox");
 //Button to turn cat sound effects off and on
 let sound = false;
+let mouseZone = document.querySelector(".banner");
 
 function playAudio(url) {
   new Audio(url).play();
@@ -52,6 +53,10 @@ const placeholder = function (word) {
 };
 
 placeholder(word);
+
+mouseZone.addEventListener("click", (event) => {
+  playAudio("audio/guesstheword.mp3");
+});
 
 button.addEventListener("click", function (e) {
   e.preventDefault();

@@ -86,89 +86,45 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+/*Base Styles*/
 body {
   font-family: "Anonymous Pro", monospace;
   background-image: url(../img/GTWbackground.png);
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
-  flex-flow: column;
-  min-height: 850px;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  min-height: 1000px;
 }
 
-/*Mobile Styles*/
+/*====Mobile Styles*====/
 
 /*Header Styles*/
-.cats.top {
-  display: none;
-}
 
-#banner-mobile {
-  display: flex;
-  flex-flow: column;
-  min-height: 150px;
-  margin-top: 10%;
-}
-
-#banner img {
-  max-height: 125px;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-/*Main Styles*/
-
-main {
+header {
   display: grid;
   grid-template-columns: 1fr;
   justify-content: center;
+  width: 100%;
 }
 
-.player,
-.guesses {
-  justify-self: center;
-}
-
-p.player-msg,
-p#remaining {
-  font-size: 1.25em;
-  font-weight: bold;
-}
-
-p.player-msg {
-  margin-top: 10%;
-  max-width: 90%;
-  text-align: center;
-}
-
-.player-input form {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  margin-top: 10%;
-}
-
-.word {
-  font-size: 1.25em;
-  text-align: center;
-}
-
-.cats.bottom {
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  margin-top: 10%;
-}
-
-/* Decorative Cats */
-.cats img {
+#lft-cat {
   display: none;
 }
 
-.talking-cat img {
-  max-height: 90px;
-  margin-top: -75px;
-  margin-left: 10%;
+.banner img {
+  max-height: 175px;
+}
+
+.desktop.cats.top {
+  display: grid;
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  justify-self: center;
+}
+
+#rgt-cat {
+  justify-self: center;
 }
 
 /* Main Styles */
@@ -177,9 +133,34 @@ p.player-msg {
   display: none;
 }
 
-.guessed,
-#remaining {
-  text-align: center;
+.cats img {
+  max-height: 100px;
+}
+
+.player {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+p.player-msg {
+  font-size: 1.25em;
+  font-weight: bold;
+  max-width: 80%;
+}
+
+p.word {
+  font-size: 1.7em;
+}
+
+p#remaining {
+  font-size: 1.15em;
+  font-weight: bold;
+}
+
+.player-input form {
+  display: flex;
+  flex-flow: column;
 }
 
 .guessed {
@@ -204,7 +185,7 @@ p.player-msg {
   border: 3px solid black;
   margin-left: auto;
   margin-right: auto;
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 
 form {
@@ -215,7 +196,7 @@ form {
   margin-top: 25px;
   background-color: #4de1fa;
   border-radius: 10px;
-  font-size: 1.5em;
+  font-size: 1.25em;
   max-width: 150px;
   padding: 10px 15px;
   margin-left: auto;
@@ -232,16 +213,15 @@ form {
   margin-top: 15px;
   background-color: #ff9e15;
   border-radius: 10px;
-  font-size: 1.5em;
+  font-size: 1.25em;
   max-width: 150px;
   margin-left: auto;
   margin-right: auto;
   cursor: url("../img/pawCursor.png"), pointer;
 }
 
-/* Footer */
-footer {
-  margin-top: 25px;
+.sound-controls {
+  margin-top: 15px;
 }
 
 /* The switch - the box around the slider */
@@ -266,7 +246,6 @@ footer {
 .switch {
   position: relative;
   display: block;
-  vertical-align: top;
   width: 125px;
   height: 30px;
   padding: 3px;
@@ -373,7 +352,7 @@ footer {
   -moz-transition: All 0.3s ease;
   -o-transition: All 0.3s ease;
 }
-</style>
+
 /* Effects */
 
 .win {
@@ -400,6 +379,14 @@ footer {
   100% {
     background-position: 0% 50%;
   }
+}
+/*Footer Styles*/
+.cats.bottom {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
 }
 
 /* ==========================================================================
@@ -492,76 +479,81 @@ footer {
 
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
-  /* Header */
-  header {
-    text-align: center;
-  }
-
-  #banner img {
-    height: 250px;
-  }
-
-  main {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .talking-cat {
-    grid-column: 1 / 2;
-    grid-row: 1 / 5;
-    justify-self: end;
-  }
-
-  .talking-cat img {
-    max-height: 250px;
-    margin-top: -25px;
-  }
-
-  .player {
-    grid-column: 2 / 3;
-    justify-self: center;
-    display: grid;
-  }
-
-  .word-cont {
-    justify-self: center;
-  }
-
-  .guesses {
-    font-size: 1.5em;
-    font-weight: bold;
-  }
-
-  .player-msg {
-    font-size: 1.5em;
-  }
-
-  .word {
-    font-size: 2em;
-  }
-
-  .cats {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
 
   .cats img {
-    max-height: 250px;
+    max-height: 125px;
+  }
+
+  /*Header Styles*/
+
+  #lft-cat {
+    padding-left: 2.5%;
+    display: block;
+    margin-bottom: -15px;
+  }
+
+  #rgt-cat {
+    max-height: 100px;
+    padding-right: 2.5%;
+  }
+
+  .desktop.cats.top {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    vertical-align: bottom;
+    padding-top: 10px;
+    border-bottom: black solid 2px;
+    background: orange;
+    width: 100vw;
+    align-items: end;
+  }
+
+  .banner {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    margin-top: 35px;
+  }
+
+  .banner img {
+    max-height: 275px;
+  }
+
+  /* Main Styles */
+  .player {
+    font-size: 1.5em;
+  }
+
+  .switch {
+    width: 175px;
+    height: 30px;
+  }
+
+  /*Footer Styles */
+  footer {
+    border-top: solid black 2px;
+    background: #ff9e15;
+    display: flex;
+    width: 100vw;
+    margin-left: -2.5%;
+    margin-right: -2.5%;
+    margin-top: 40px;
   }
 
   .cats.bottom {
-    margin-top: -25px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    flex-grow: 1;
   }
 
-  .player-input form {
-    display: flex;
-    flex-flow: column;
-    text-align: center;
-    max-width: 200px;
-    justify-items: center;
+  #btm-left-cat {
+    justify-self: left;
+  }
+
+  #btm-rght-cat {
+    justify-self: right;
   }
 }
 
