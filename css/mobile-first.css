@@ -146,7 +146,8 @@ header {
 p.player-msg {
   font-size: 1.25em;
   font-weight: bold;
-  max-width: 80%;
+  max-width: 90%;
+  text-align: center;
 }
 
 p.word {
